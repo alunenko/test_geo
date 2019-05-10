@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {AutocompleteDirective} from "./autocomplete.directive";
+import {GeoService} from "./geo.service";
 
 @NgModule({
     declarations: [
@@ -12,7 +13,7 @@ import {AutocompleteDirective} from "./autocomplete.directive";
     imports: [
         BrowserModule
     ],
-    providers: [],
+    providers: [GeoService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
