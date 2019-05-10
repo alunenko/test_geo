@@ -1,0 +1,34 @@
+.d-none {
+  display: none;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.mt-1 {
+  margin-top: 10px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+.autocomplete {
+  &-search {
+    box-sizing: border-box;
+  }
+  &-search,
+  &-results {
+    border: 1px solid;
+  }
+}
