@@ -41,7 +41,10 @@ export class AutocompleteDirective {
             this.previousText = currentValue;
             this.geoService.getGeolocation(element.value.trim()).subscribe(
                 (responseGetGeolocation) => {
-                    this.geoService.searchResults(responseGetGeolocation);
+                    this.geoService.saveSearchResults(responseGetGeolocation);
+                },
+                (errorGetGeolocation) => {
+                    console.error("errorGetGeolocation", errorGetGeolocation);
                 }
             );
         }

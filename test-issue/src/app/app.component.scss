@@ -23,7 +23,23 @@ h1 {
   text-align: center;
 }
 
+p {
+  margin: 0;
+}
+
 .autocomplete {
+  li {
+    padding: 5px;
+    border-top: 1px solid gray;
+
+    &:first-child {
+      border: 0 none;
+    }
+
+    &:hover {
+      background-color: lightskyblue;
+    }
+  }
   &-search {
     box-sizing: border-box;
   }

@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import {EventEmitter, Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable()
@@ -6,20 +6,30 @@ export class GeoService {
     private apiUrl = "http://api.geonames.org/searchJSON";
     private userName = "vicarius";
     private results: any;
+    private selected: any;
+
+    newResults = new EventEmitter();
+    newSelected = new EventEmitter();
 
     constructor(private httpClient: HttpClient) {}
 
     getGeolocation(searchText: string) {
-        let url = "";
+        const url = `${this.apiUrl}?q=${searchText}&maxRows=10&username=${this.userName}`;
 
-        url = `${this.apiUrl}?q=${searchText}&maxRows=10&username=${this.userName}`;
-        console.log(url);
-
-        return this.httpClient.get(url);
+        return this.httpClient.get(url); /* FIXME: use pipe from rxjs. catchError */
     }
 
-    searchResults(response: any) {
+    saveSearchResults(response: any) {
         this.results = response;
-        console.log("search result is ", this.results);
+        this.newResults.emit(response);
+    }
+
+    saveSelected(city: string) {
+        this.selected = city;
+        this.newSelected.emit(city);
+    }
+
+    getResults() {
+        return this.results;
     }
 }

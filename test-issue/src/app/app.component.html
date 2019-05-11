@@ -4,11 +4,9 @@
 
 <div class="autocomplete">
     <input autocomplete
+           [value]="autocompliteValue"
+           (focus)="onFocus()"
            class="autocomplete-search w-100"
            type="text">
-    <div class="autocomplete-results mt-1">
-        <ul>
-            <li></li>
-        </ul>
-    </div>
+    <app-autocomplite-result></app-autocomplite-result>
 </div>

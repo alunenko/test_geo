@@ -1,0 +1,14 @@
+<div *ngIf="showSearchResult; else noResults">
+    <div class="autocomplete-results">
+        <ul>
+            <li *ngFor="let city of searchResult.geonames">
+                <p><b>{{ city.name }}</b></p>
+                <small>{{ city.countryName }}</small>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ng-template #noResults>
+    <p>{{ noResultText }}</p>
+</ng-template>
