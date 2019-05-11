@@ -1,17 +1,19 @@
 import {
-    Component, ElementRef, HostListener,
+    Component,
+    ElementRef,
+    HostListener,
     OnInit
 } from '@angular/core';
 
-import {GeoService} from "../geo.service";
-import {AutocompliteResultService} from "./autocomplite-result.service";
+import {GeoService} from "../../services/geo.service";
+import {AutocompleteResultService} from "./autocomplete-result.service";
 
 @Component({
-    selector: 'app-autocomplite-result',
-    templateUrl: './autocomplite-result.component.html',
-    styleUrls: ['./autocomplite-result.component.scss']
+    selector: 'app-autocomplete-result',
+    templateUrl: './autocomplete-result.component.html',
+    styleUrls: ['./autocomplete-result.component.scss']
 })
-export class AutocompliteResultComponent implements OnInit {
+export class AutocompleteResultComponent implements OnInit {
     searchResult: any;
     showSearchResult = false;
     noResultText = "";
@@ -19,13 +21,13 @@ export class AutocompliteResultComponent implements OnInit {
     constructor(
         private elementReference: ElementRef,
         private geoService: GeoService,
-        private autocompliteResultService: AutocompliteResultService
+        private autocompliteResultService: AutocompleteResultService
     ) {
         this.geoService.newResults.subscribe(
             (responseGetGeolocation) => {
                 this.searchResult = responseGetGeolocation;
 
-                if(responseGetGeolocation.geonames.length === 0) {
+                if (responseGetGeolocation.geonames.length === 0) {
                     this.showSearchResult = false;
                     this.noResultText = "There is no results...";
                 } else {
@@ -49,13 +51,15 @@ export class AutocompliteResultComponent implements OnInit {
         'document:click',
         ['$event']
     ) close(event) {
-        if(this.elementReference.nativeElement.contains(event.target)) {
+        if (this.elementReference.nativeElement.contains(event.target)) {
             /* clicked inside */
             this.geoService.saveSelected(event.target.firstElementChild.innerText);
             this.showSearchResult = false;
         } else {
             /* clicked outside */
-            if(!event.target.classList.contains("autocomplete-search")) {
+            let isInputAutocompleteElement = event.target.classList.contains("autocomplete-search");
+
+            if (!isInputAutocompleteElement) {
                 this.showSearchResult = false;
             }
         }

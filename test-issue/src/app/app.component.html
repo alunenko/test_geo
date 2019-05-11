@@ -2,11 +2,4 @@
     <h1>Welcome to {{ title }}!</h1>
 </div>
 
-<div class="autocomplete">
-    <input autocomplete
-           [value]="autocompliteValue"
-           (focus)="onFocus()"
-           class="autocomplete-search w-100"
-           type="text">
-    <app-autocomplite-result></app-autocomplite-result>
-</div>
+<app-autocomplete></app-autocomplete>

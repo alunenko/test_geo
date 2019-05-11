@@ -1,6 +1,6 @@
 import {EventEmitter} from "@angular/core";
 
-export class AutocompliteResultService {
+export class AutocompleteResultService {
     private displayResults = false;
 
     displayResultsEvent = new EventEmitter();

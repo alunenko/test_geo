@@ -3,16 +3,18 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
-import {AutocompleteDirective} from "./autocomplete.directive";
-import {GeoService} from "./geo.service";
-import { AutocompliteResultComponent } from './autocomplite-result/autocomplite-result.component';
-import {AutocompliteResultService} from "./autocomplite-result/autocomplite-result.service";
+import {AutocompleteDirective} from "./components/autocomplete/autocomplete.directive";
+import {GeoService} from "./services/geo.service";
+import { AutocompleteResultComponent } from './components/autocomplete-result/autocomplete-result.component';
+import {AutocompleteResultService} from "./components/autocomplete-result/autocomplete-result.service";
+import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         AutocompleteDirective,
-        AutocompliteResultComponent
+        AutocompleteResultComponent,
+        AutocompleteComponent
     ],
     imports: [
         BrowserModule,
@@ -20,7 +22,7 @@ import {AutocompliteResultService} from "./autocomplite-result/autocomplite-resu
     ],
     providers: [
         GeoService,
-        AutocompliteResultService
+        AutocompleteResultService
     ],
     bootstrap: [AppComponent]
 })

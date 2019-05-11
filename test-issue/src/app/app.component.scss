@@ -6,10 +6,6 @@
   width: 100%;
 }
 
-.mt-1 {
-  margin-top: 10px;
-}
-
 ul {
   margin: 0;
   padding: 0;
@@ -25,26 +21,4 @@ h1 {
 
 p {
   margin: 0;
-}
-
-.autocomplete {
-  li {
-    padding: 5px;
-    border-top: 1px solid gray;
-
-    &:first-child {
-      border: 0 none;
-    }
-
-    &:hover {
-      background-color: lightskyblue;
-    }
-  }
-  &-search {
-    box-sizing: border-box;
-  }
-  &-search,
-  &-results {
-    border: 1px solid;
-  }
 }

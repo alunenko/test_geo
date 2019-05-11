@@ -4,7 +4,7 @@ import {
     HostListener
 } from "@angular/core";
 
-import {GeoService} from "./geo.service";
+import {GeoService} from "../../services/geo.service";
 
 @Directive({
     selector: "[autocomplete]"
