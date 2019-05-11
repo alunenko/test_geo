@@ -1,8 +1,10 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {AutocompleteDirective} from "./autocomplete.directive";
+import {GeoService} from "./geo.service";
 
 @NgModule({
     declarations: [
@@ -10,9 +12,10 @@ import {AutocompleteDirective} from "./autocomplete.directive";
         AutocompleteDirective
     ],
     imports: [
-        BrowserModule
+        BrowserModule,
+        HttpClientModule
     ],
-    providers: [],
+    providers: [GeoService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
