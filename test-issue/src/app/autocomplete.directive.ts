@@ -3,14 +3,16 @@ import {
     ElementRef,
     HostListener
 } from "@angular/core";
+
 import {GeoService} from "./geo.service";
 
 @Directive({
     selector: "[autocomplete]"
 })
 export class AutocompleteDirective {
-    minLengthForSearch = 3;
-    previousText: string;
+    private minLengthForSearch = 3;
+    private previousText: string;
+    private requestQueue = false;
 
     constructor(
         private elementReference: ElementRef,
@@ -26,10 +28,22 @@ export class AutocompleteDirective {
         let isElementLength = currentValue.length >= this.minLengthForSearch;
         let isRequestTextChanged = currentValue !== this.previousText;
 
-        if(isElementLength && isRequestTextChanged) {
-            /* provide element.value for service */
+        setTimeout(
+            /* a small delay while user typing */
+            () => {
+                this.requestQueue = true;
+            },
+            400
+        );
+
+        if(isElementLength && isRequestTextChanged && this.requestQueue) {
+            this.requestQueue = false;
             this.previousText = currentValue;
-            this.geoService.getGeolocation(element.value.trim());
+            this.geoService.getGeolocation(element.value.trim()).subscribe(
+                (responseGetGeolocation) => {
+                    this.geoService.searchResults(responseGetGeolocation);
+                }
+            );
         }
     }
 }
