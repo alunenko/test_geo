@@ -10,5 +10,6 @@
 </div>
 
 <ng-template #noResults>
-    <p>{{ noResultText }}</p>
+    <p *ngIf="noResultText"
+       class="no-results">{{ noResultText }}</p>
 </ng-template>

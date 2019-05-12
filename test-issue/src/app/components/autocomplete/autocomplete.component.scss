@@ -1,21 +1,115 @@
+#container {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 50px);
+  width: calc(100% + 50px);
+  transition: .4s all;
+  border: 5px solid transparent;
+  border-right: 0 none;
+
+  &.border-left-none {
+    border-left: 0 none;
+  }
+}
+
+#container.border-left-none {
+  border-left: 0 none;
+}
+
+@keyframes containerBounce {
+  0% {
+    border-radius: 40px 10px;
+    transform: skew(-28deg);
+  }
+  20% {
+    border-radius: 10px 40px;
+    transform: skew(28deg);
+  }
+  39% {
+    border-radius: 0;
+    transform: skew(0);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(20px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#loupe {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    content: 's';
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    font-size: 100px;
+    line-height: 30px;
+    top: 0;
+    left: 4px;
+    color: #1caaa5;
+  }
+}
+
+#wrapper {
+  width: 100%;
+  height: 50px;
+}
+
+#content {
+  height: 50px;
+  background-color: #3f3f55;
+  padding: 5px;
+}
+
+#close {
+  width: 45px;
+  height: 50px;
+  position: absolute;
+  font-size: 30px;
+  line-height: 52px;
+  top: calc(50% - 25px);
+  color: #1caaa5;
+  text-align: center;
+  transition: .3s all;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.hide {
+    right: -40px;
+    display: none;
+  }
+
+  &.show {
+    right: 40px;
+    display: block;
+  }
+}
+
 .autocomplete {
-  li {
-    padding: 5px;
-    border-top: 1px solid gray;
-
-    &:first-child {
-      border: 0 none;
-    }
-
-    &:hover {
-      background-color: lightskyblue;
-    }
-  }
   &-search {
+    position: absolute;
+    height: 50px;
     box-sizing: border-box;
-  }
-  &-search,
-  &-results {
-    border: 1px solid;
+    border: 0 none;
+    background-color: #3f3f55;
+    color: #8c8ca8;
+    width: calc(100% - 150px);
+    font-size: 25px;
+    padding: 5px;
+    outline: none;
   }
 }
