@@ -15,14 +15,14 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
     animations: [
         trigger('toggleSearchBar', [
             state('open', style({
-                animation: 'containerBounce .4s',
+                animation: 'autocompleteBounce .4s',
                 width: 'calc(100% + 50px)',
-                right: '-50px'
+                right: '-60px'
             })),
             state('closed', style({
-                animation: 'containerBounce .4s',
-                width: '60px',
-                right: '-5px'
+                animation: 'autocompleteBounce .4s',
+                width: '50px',
+                right: '0'
             })),
             transition('open => closed', [
                 animate('.4s')
@@ -34,19 +34,19 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
     ]
 })
 export class AutocompleteComponent {
-    autocompliteValue = "";
+    autocompleteValue = "";
     isSearchBarOpen = false;
     isOpen = false;
 
     constructor(
         private geoService: GeoService,
-        private autocompliteResultService: AutocompleteResultService,
+        private autocompleteResultService: AutocompleteResultService,
         private elementReference: ElementRef,
         private renderer2: Renderer2
     ) {
         this.geoService.newSelected.subscribe(
             (newValue) => {
-                this.autocompliteValue = newValue;
+                this.autocompleteValue = newValue;
             }
         )
     }
@@ -55,7 +55,7 @@ export class AutocompleteComponent {
         let isGeonamesResult = this.geoService.getResults();
 
         if (isGeonamesResult) {
-            this.autocompliteResultService.showDisplayResults();
+            this.autocompleteResultService.showDisplayResults();
         }
     }
 
@@ -84,7 +84,7 @@ export class AutocompleteComponent {
 
         this.isOpen = false;
         this.isSearchBarOpen = false;
-        this.autocompliteResultService.hideDisplayResults();
+        this.autocompleteResultService.hideDisplayResults();
 
         if(!isInput) {
             this.renderer2.addClass(inputElement, className);

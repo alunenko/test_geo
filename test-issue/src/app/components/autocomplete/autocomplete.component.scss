@@ -1,22 +1,25 @@
-#container {
-  position: absolute;
-  right: 0;
-  top: calc(50% - 50px);
-  width: calc(100% + 50px);
-  transition: .4s all;
-  border: 5px solid transparent;
-  border-right: 0 none;
+.search-icon {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
 
-  &.border-left-none {
-    border-left: 0 none;
+  &:after {
+    content: 's';
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    font-size: 100px;
+    line-height: 30px;
+    top: 0;
+    left: 0;
+    color: var(--color-autocompliteSearchIcon);
+    text-align: center;
   }
 }
 
-#container.border-left-none {
-  border-left: 0 none;
-}
-
-@keyframes containerBounce {
+@keyframes autocompleteBounce {
   0% {
     border-radius: 40px 10px;
     transform: skew(-28deg);
@@ -43,44 +46,14 @@
   }
 }
 
-#loupe {
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  position: relative;
-
-  &:after {
-    content: 's';
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    font-size: 100px;
-    line-height: 30px;
-    top: 0;
-    left: 4px;
-    color: #1caaa5;
-  }
-}
-
-#wrapper {
-  width: 100%;
-  height: 50px;
-}
-
-#content {
-  height: 50px;
-  background-color: #3f3f55;
-  padding: 5px;
-}
-
-#close {
+.close-icon {
   width: 45px;
   height: 50px;
   position: absolute;
   font-size: 30px;
   line-height: 52px;
   top: calc(50% - 25px);
-  color: #1caaa5;
+  color: var(--color-autocompliteCloseIcon);
   text-align: center;
   transition: .3s all;
 
@@ -89,25 +62,37 @@
   }
 
   &.hide {
-    right: -40px;
+    right: -60px;
     display: none;
   }
 
   &.show {
-    right: 40px;
+    right: 60px;
     display: block;
   }
 }
 
 .autocomplete {
+  position: absolute;
+  right: 0;
+  width: calc(100% + 50px);
+  transition: .4s all;
+  height: 50px;
+  background-color: var(--backgroundColor-content);
+  padding: 5px;
+
+  &.border-left-none {
+    border-left: 0 none;
+  }
+
   &-search {
     position: absolute;
     height: 50px;
     box-sizing: border-box;
     border: 0 none;
-    background-color: #3f3f55;
-    color: #8c8ca8;
-    width: calc(100% - 150px);
+    background-color: var(--backgroundColor-autocomplite);
+    color: var(--color-autocomplite);
+    width: calc(100% - 160px);
     font-size: 25px;
     padding: 5px;
     outline: none;

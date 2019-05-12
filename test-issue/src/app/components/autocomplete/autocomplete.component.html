@@ -1,17 +1,14 @@
 <div [@toggleSearchBar]="isOpen ? 'open' : 'closed'"
-        id="container"
      class="autocomplete border-left-none">
-  <div id="content">
-    <span id="loupe"
-          (click)="onOpen()"></span>
-    <input autocomplete
-           [value]="autocompliteValue"
-           (focus)="onFocus()"
-           class="autocomplete-search d-none"
-           type="text">
-    <app-autocomplete-result></app-autocomplete-result>
-    <span (click)="onClose()"
-          id="close"
-          class="hide">X</span>
-  </div>
+  <span class="search-icon"
+        (click)="onOpen()"></span>
+  <input autocomplete
+         [value]="autocompleteValue"
+         (focus)="onFocus()"
+         class="autocomplete-search d-none"
+         type="text">
+  <app-autocomplete-result></app-autocomplete-result>
+  <span (click)="onClose()"
+        id="close"
+        class="close-icon hide">X</span>
 </div>
