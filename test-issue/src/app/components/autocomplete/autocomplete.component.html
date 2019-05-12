@@ -1,8 +1,14 @@
-<div class="autocomplete">
+<div [@toggleSearchBar]="isOpen ? 'open' : 'closed'"
+     class="autocomplete border-left-none">
+  <span class="search-icon"
+        (click)="onOpen()"></span>
   <input autocomplete
-         [value]="autocompliteValue"
+         [value]="autocompleteValue"
          (focus)="onFocus()"
-         class="autocomplete-search w-100"
+         class="autocomplete-search d-none"
          type="text">
   <app-autocomplete-result></app-autocomplete-result>
+  <span (click)="onClose()"
+        id="close"
+        class="close-icon hide">X</span>
 </div>

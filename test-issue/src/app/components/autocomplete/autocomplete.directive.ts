@@ -1,7 +1,7 @@
 import {
     Directive,
-    ElementRef,
-    HostListener
+    ElementRef, HostBinding,
+    HostListener, Renderer2
 } from "@angular/core";
 
 import {GeoService} from "../../services/geo.service";
@@ -16,7 +16,8 @@ export class AutocompleteDirective {
 
     constructor(
         private elementReference: ElementRef,
-        private geoService: GeoService) {
+        private geoService: GeoService
+    ) {
     }
 
     @HostListener(

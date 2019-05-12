@@ -61,6 +61,7 @@ export class AutocompleteResultComponent implements OnInit {
 
             if (!isInputAutocompleteElement) {
                 this.showSearchResult = false;
+                this.noResultText = "";
             }
         }
     }

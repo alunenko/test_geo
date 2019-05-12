@@ -1,9 +1,30 @@
-.d-none {
-  display: none;
+:root{
+  --color1: #2e2f44;
+  --color2: transparent;
+  --color3: #1caaa5;
+  --color4: #3f3f55;
+  --color5: #8c8ca8;
+
+  --backgroundColor-homePage: var(--color1);
+  --borderColor-autocomplite: var(--color2);
+
+  --color-autocompliteSearchIcon: var(--color3);
+  --color-autocompliteCloseIcon: var(--color3);
+  --backgroundColor-autocomplite: var(--color4);
+  --color-autocomplite: var(--color5);
+
+  --backgroundColor-content: var(--color4);
+
+  --color-homePage: var(--color3);
 }
 
-.w-100 {
-  width: 100%;
+body {
+  background-color: var(--backgroundColor-homePage);
+  overflow: hidden;
+}
+
+.d-none {
+  display: none;
 }
 
 ul {
@@ -17,6 +38,7 @@ ul {
 
 h1 {
   text-align: center;
+  color: var(--color-homePage);
 }
 
 p {

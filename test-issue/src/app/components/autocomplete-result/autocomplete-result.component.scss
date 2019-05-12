@@ -1,0 +1,30 @@
+.autocomplete {
+  &-results {
+    border: 1px solid #2d2d4f;
+    background-color: #3f3f55;
+
+    li {
+      padding: 5px;
+      border-top: 1px solid #2d2d4f;
+      color: #8c8ca8;
+
+      &:hover {
+        background-color: #f7911e;
+        color: white;
+      }
+
+      &:first-child {
+        border: 0 none;
+      }
+    }
+  }
+}
+
+.no-results {
+  margin-top: 5px;
+  font-size: 20px;
+  text-align: center;
+  color: #8c8ca8;
+  background-color: #3f3f55;
+
+}

@@ -1,5 +1,5 @@
 import {
-  Component,
+  Component, ElementRef, HostBinding, HostListener,
   ViewEncapsulation
 } from '@angular/core';
 
