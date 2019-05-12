@@ -1,0 +1,27 @@
+{
+  "name": "test_geo",
+  "version": "1.0.0",
+  "description": "Autocomplite using GeoNames API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ng": "./node_modules/.bin/ng"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alunenko/test_geo.git"
+  },
+  "keywords": [
+    "autocomplite",
+    "geonames"
+  ],
+  "author": "Anton Lunenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alunenko/test_geo/issues"
+  },
+  "homepage": "https://github.com/alunenko/test_geo#readme",
+  "devDependencies": {
+    "@angular/cli": "^7.3.9"
+  }
+}
