@@ -1,5 +1,20 @@
-<div>
-    <h1>Welcome to {{ title }}!</h1>
-</div>
+<h1>Welcome to {{ title }}!</h1>
 
 <app-autocomplete></app-autocomplete>
+
+<div class="notes">
+    <h2>Notes</h2>
+    <hr>
+    <ol>
+        <li><i>Open search bar by click on 'S' icon, and close by 'x' button</i></li>
+        <li><i>Search-bar send a request when word contain 3+ character</i></li>
+        <li><i>Search-bar submit the request after pause in 400ms</i></li>
+        <li><i>Search has limit up to 10 results</i></li>
+        <li><i>When you'll see the search result, you can click on any item. Item where you are click, will be pasted into search field as result</i>
+            <ol>
+                <li><i>If you are misspeled while do a click from the first results, you can click on input field again, and the previous results are shown</i></li>
+                <li><i>But if you want the new search with that value in input field, just press an any key, and the new request will be sumbitted</i></li>
+            </ol>
+        </li>
+    </ol>
+</div>

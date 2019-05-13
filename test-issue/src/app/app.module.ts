@@ -1,13 +1,14 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {AutocompleteDirective} from "./components/autocomplete/autocomplete.directive";
 import {GeoService} from "./services/geo.service";
-import { AutocompleteResultComponent } from './components/autocomplete-result/autocomplete-result.component';
+import {AutocompleteResultComponent} from './components/autocomplete-result/autocomplete-result.component';
 import {AutocompleteResultService} from "./components/autocomplete-result/autocomplete-result.service";
-import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
+import {AutocompleteComponent} from './components/autocomplete/autocomplete.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { AutocompleteComponent } from './components/autocomplete/autocomplete.co
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         HttpClientModule
     ],
     providers: [

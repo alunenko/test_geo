@@ -1,9 +1,33 @@
-.d-none {
-  display: none;
+:root {
+  --color1: #2e2f44;
+  --color2: transparent;
+  --color3: #1caaa5;
+  --color4: #3f3f55;
+  --color5: #8c8ca8;
+
+  --backgroundColor-homePage: var(--color1);
+  --color-homePage: var(--color3);
+  --hr-homePage: var(--color4);
+  --color-h2-homePage: var(--color3);
+  --color-text-homePage: var(--color5);
+
+  --borderColor-autocomplite: var(--color2);
+  --color-autocomplite: var(--color5);
+  --backgroundColor-autocomplite: var(--color4);
+
+  --color-autocompliteSearchIcon: var(--color3);
+  --color-autocompliteCloseIcon: var(--color3);
+
+  --backgroundColor-content: var(--color4);
 }
 
-.w-100 {
-  width: 100%;
+body {
+  background-color: var(--backgroundColor-homePage);
+  overflow: hidden;
+}
+
+.d-none {
+  display: none;
 }
 
 ul {
@@ -17,8 +41,23 @@ ul {
 
 h1 {
   text-align: center;
+  color: var(--color-homePage);
 }
 
 p {
   margin: 0;
+}
+
+.notes {
+  h2 {
+    color: var(--color-h2-homePage);
+  }
+
+  hr {
+    border-color: var(--hr-homePage);
+  }
+
+  li {
+    color: var(--color-text-homePage);
+  }
 }

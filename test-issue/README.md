@@ -1,5 +1,17 @@
 # TestIssue
 
+## Project notes
+
+* Open search bar by click on 'S' icon, and close by 'x' button
+* Search-bar send a request when word contain 3+ character
+* Search-bar submit the request after pause in 400ms
+* Search has limit up to 10 results
+* When you'll see the search result, you can click on any item. Item where you are click, will be pasted into search field as result
+  * If you are misspeled while do a click from the first results, you can click on input field again, and the previous results are shown</i></li>
+  * But if you want the new search with that value in input field, just press an any key, and the new request will be sumbitted</i></li>
+
+---
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Development server
