@@ -1,6 +1,10 @@
 .autocomplete {
   &-results {
     border: 1px solid #2d2d4f;
+    border-left: 0 none;
+    border-right: 0 none;
+    position: relative;
+    left: -2px;
     background-color: #3f3f55;
 
     li {
